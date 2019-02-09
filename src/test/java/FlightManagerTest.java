@@ -1,11 +1,14 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Date;
+
 import static org.junit.Assert.assertEquals;
 
 public class FlightManagerTest {
 
     Plane plane;
+    Date departureTime;
     Flight flight;
     FlightManager flightManager;
     Passenger passenger1;
@@ -15,7 +18,9 @@ public class FlightManagerTest {
     @Before
     public void before() {
         plane = new Plane(PlaneType.BOEING747);
-        flight = new Flight(plane, "GLA123", "Glasgow", "19:00", "Paris", 30);
+        departureTime = new Date (119, 01, 13);
+        departureTime.setTime(departureTime.getTime() + 60000);
+        flight = new Flight(plane, "GLA123", "Glasgow", departureTime, "Paris", 30);
         flightManager = new FlightManager(flight);
         passenger1 = new Passenger("Charlie", 1, 100);
         passenger2 = new Passenger("Dennis", 3, 40);

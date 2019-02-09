@@ -1,6 +1,8 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Date;
+
 import static org.junit.Assert.assertEquals;
 
 public class FlightTest {
@@ -9,6 +11,8 @@ public class FlightTest {
     Flight flight2;
     Plane plane;
     Plane plane2;
+    Date departureTime;
+    Date departureTime2;
     Passenger passenger1;
     Passenger passenger2;
 
@@ -16,8 +20,14 @@ public class FlightTest {
     public void before() {
         plane = new Plane(PlaneType.BOEING747);
         plane2 = new Plane(PlaneType.AIRBUSA340);
-        flight = new Flight(plane, "GLA123", "Glasgow", "19:00", "Paris", 30);
-        flight2 = new Flight(plane2, "EDI456", "Edinburgh", "13:00", "Berlin", 5);
+
+        departureTime = new Date (119, 01, 13);
+        departureTime.setTime(departureTime.getTime() + 60000);
+        flight = new Flight(plane, "GLA123", "Glasgow", departureTime, "Paris", 30);
+
+        departureTime2 = new Date (119, 01, 13);
+        departureTime2.setTime(departureTime2.getTime() + 80000);
+        flight2 = new Flight(plane2, "EDI456", "Edinburgh", departureTime2, "Berlin", 5);
         passenger1 = new Passenger("Charlie", 1, 100);
         passenger2 = new Passenger("Dennis", 3, 10);
     }
@@ -50,7 +60,7 @@ public class FlightTest {
 
     @Test
     public void hasDepartureTime() {
-        assertEquals("19:00", flight.getDepartureTime());
+        assertEquals(departureTime, flight.getDepartureTime());
     }
 
     @Test
