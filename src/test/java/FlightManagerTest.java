@@ -39,4 +39,12 @@ public class FlightManagerTest {
         flight.bookPassenger(passenger3);
         assertEquals(60, flightManager.calculateBaggageWeightBooked());
     }
+
+    @Test
+    public void canCalculateRemainingAvailableBaggageWeight() {
+        flight.bookPassenger(passenger1);
+        flight.bookPassenger(passenger2);
+        flight.bookPassenger(passenger3);
+        assertEquals(1940, flightManager.calculateRemainingBaggageWeight());
+    }
 }

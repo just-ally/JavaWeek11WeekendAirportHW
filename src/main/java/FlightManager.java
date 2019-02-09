@@ -16,14 +16,19 @@ public class FlightManager {
         return (calculateWeightForBaggage() / this.flight.getPlane().getCapacityFromEnum());
     }
 
-    public int calculateBaggageWeightBooked() {
+    public int calculateTotalBagsBooked() {
         int bagsBooked = 0;
-        ArrayList<Passenger> bookedPassengers = this.flight.getPassengers();
-        for (Passenger passenger : bookedPassengers) {
+        for (Passenger passenger : this.flight.getPassengers()) {
             bagsBooked += passenger.getBags();
         }
-        int baggageWeightBooked = bagsBooked * 10;
-        return baggageWeightBooked;
+        return bagsBooked;
     }
 
+    public int calculateBaggageWeightBooked() {
+        return calculateTotalBagsBooked() * 10;
+    }
+
+    public int calculateRemainingBaggageWeight() {
+        return calculateWeightForBaggage() - calculateBaggageWeightBooked();
+    }
 }

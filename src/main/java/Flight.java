@@ -1,6 +1,10 @@
+import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class Flight {
+
+    // private LocalTime departureTime;
+    // LocalTime sixThirty = LocalTime.of(6, 30);
 
     private ArrayList<Passenger> passengers;
     private Plane plane;
