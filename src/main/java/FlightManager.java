@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class FlightManager {
 
@@ -30,5 +31,9 @@ public class FlightManager {
 
     public int calculateRemainingBaggageWeight() {
         return calculateWeightForBaggage() - calculateBaggageWeightBooked();
+    }
+
+    public ArrayList<Passenger> sortPassengersBubble() {
+        
     }
 }

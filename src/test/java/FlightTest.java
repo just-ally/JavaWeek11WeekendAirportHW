@@ -1,6 +1,7 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 import static org.junit.Assert.assertEquals;
@@ -97,6 +98,19 @@ public class FlightTest {
         flight.bookPassenger(passenger2);
         assertEquals(0, flight.countPassengers());
     }
+
+    @Test
+    public void canCreateSeatNumberList() {
+        assertEquals(40, flight.getSeatNumbers().size());
+    }
+
+    // written just to check that a different number is provided each time
+//    @Test
+//    public void canAssignRandomSeatNumber() {
+//        flight.assignRandomSeatNumber(passenger1);
+//        assertEquals(1, passenger1.getSeatNumber());
+//    }
+
 
 
 }

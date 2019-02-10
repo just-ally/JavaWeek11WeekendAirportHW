@@ -54,4 +54,16 @@ public class PassengerTest {
         assertEquals(1, passenger.getNumberOfBookedFlights());
         assertEquals(flight, passenger.getBookedFlights().get(0));
     }
+
+    @Test
+    public void seatNumberStartsAt0() {
+        assertEquals(0, passenger.getSeatNumber());
+    }
+
+    // written to test that seat number has changed
+//    @Test
+//    public void hasRandomSeatNumberOnBookedFlight() {
+//        flight.bookPassenger(passenger);
+//        assertEquals(0, passenger.getSeatNumber());
+//    }
 }
