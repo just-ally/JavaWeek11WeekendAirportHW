@@ -97,4 +97,6 @@ public class FlightTest {
         flight.bookPassenger(passenger2);
         assertEquals(0, flight.countPassengers());
     }
+
+
 }

@@ -42,4 +42,16 @@ public class PassengerTest {
         flight.bookPassenger(passenger);
         assertEquals(70, passenger.getWallet());
     }
+
+    @Test
+    public void startsWithNoFlightsBooked() {
+        assertEquals(0, passenger.getNumberOfBookedFlights());
+    }
+
+    @Test
+    public void canStoreBookedFlights() {
+        flight.bookPassenger(passenger);
+        assertEquals(1, passenger.getNumberOfBookedFlights());
+        assertEquals(flight, passenger.getBookedFlights().get(0));
+    }
 }

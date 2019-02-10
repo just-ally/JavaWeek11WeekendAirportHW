@@ -71,6 +71,7 @@ public class Flight {
         if (getEmptySeats() > 0 && passenger.getWallet() >= getCost()) {
             this.passengers.add(passenger);
             passenger.payForFlight(this.cost);
+            passenger.storeFlightDetails(this);
         }
     }
 
