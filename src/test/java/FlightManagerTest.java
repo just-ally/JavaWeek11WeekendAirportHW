@@ -58,6 +58,6 @@ public class FlightManagerTest {
         flight.bookPassenger(passenger1);
         flight.bookPassenger(passenger2);
         flight.bookPassenger(passenger3);
-        assertEquals(passenger1, flightManager.sortPassengersBubble().get(0));
+        assertEquals(1, flightManager.sortPassengersSeatsBubble());
     }
 }
